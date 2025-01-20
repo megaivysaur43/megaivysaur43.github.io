@@ -6,10 +6,16 @@
     <title>Bulbasaur Games</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Basic styles for the navigation bar */
+        /* Navbar styling */
         nav {
             background-color: #1e1e1e;
             padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         nav ul {
@@ -39,7 +45,13 @@
             border-radius: 5px;
         }
 
-        /* Keep your container and buttons as-is */
+        /* Add spacing to prevent content from overlapping the fixed nav */
+        body {
+            margin: 0;
+            padding-top: 60px; /* Adjust to match the height of your navbar */
+        }
+
+        /* Main container and buttons styling */
         .container {
             text-align: center;
             margin-top: 50px;
