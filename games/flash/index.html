@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Games On Bulbasaur Games</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch(".") // Fetch directory listing (requires server-side support)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+                    const links = Array.from(doc.querySelectorAll("a"));
+                    const swfFiles = links.map(link => link.getAttribute("href"))
+                                         .filter(name => name.endsWith(".swf"));
+                    
+                    const container = document.getElementById("swfContainer");
+                    swfFiles.forEach(file => {
+                        const fileName = file.replace(".swf", "");
+                        const div = document.createElement("div");
+                        div.innerHTML = `
+                            <h3>${fileName}</h3>
+                            <embed src="${file}" width="800" height="600"></embed>
+                        `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => console.error("Error loading SWF files:", error));
+        });
+    </script>
+</head>
+<body>
+    <h1>Flash Games</h1>
+    <div id="swfContainer"></div>
+</body>
+</html>
