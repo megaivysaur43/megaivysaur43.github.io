@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3kh0 Games</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555555;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #f1c40f;
+        }
+        .game-container {
+            margin-top: 20px;
+        }
+        iframe {
+            width: 80%;
+            height: 500px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="flash/html/index.html">Flash Games</a></li>
+        </ul>
+    </nav>
+
+    <h1>Select a Game to Play</h1>
+    <div class="game-container">
+        <label for="gameSelect">Choose a game:</label>
+        <select id="gameSelect" onchange="loadGame()">
+            <option value="">--Select a game--</option>
+            <option value="https://raw.githack.com/3kh0/3kh0-assets/main/2048/index.html">2048</option>
+            <option value="https://raw.githack.com/3kh0/3kh0-assets/main/dogeminer/index.html">Dogeminer</option>
+            <option value="https://raw.githack.com/3kh0/3kh0-assets/main/among-us/index.html">Among Us</option>
+            <option value="https://raw.githack.com/3kh0/3kh0-assets/main/slope/index.html">Slope</option>
+            <option value="https://raw.githack.com/3kh0/3kh0-assets/main/roblox/index.html">Roblox</option>
+            <!-- Add more games as needed -->
+        </select>
+    </div>
+    <iframe id="gameFrame" src=""></iframe>
+
+    <script>
+        function loadGame() {
+            const gameSelect = document.getElementById('gameSelect');
+            const gameFrame = document.getElementById('gameFrame');
+            const selectedGame = gameSelect.value;
+
+            if (selectedGame) {
+                gameFrame.src = selectedGame;
+            } else {
+                gameFrame.src = '';
+            }
+        }
+    </script>
+</body>
+</html>
