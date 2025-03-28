@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Perfect Hotel Unblocked - ubg235 GameMonetize</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .son {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+
+        .son {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.SDK_OPTIONS = {
+           gameId: "8phpnlcxds01n4y4j1ydlztxp0k5jsja",
+           onEvent: function (a) {
+               console.log(a)
+              switch (a.name) {
+                 case "SDK_GAME_PAUSE":
+                    // pause game logic / mute audio
+                    break;
+                 case "SDK_GAME_START":
+                    // advertisement done, resume game logic and unmute audio
+                    break;
+                 case "SDK_READY":
+                    // when sdk is ready
+                    break;
+              }
+           }
+        };
+     (function (a, b, c) {
+        var d = a.getElementsByTagName(b)[0];
+        a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "patch/js/gm-sdk.js", d.parentNode.insertBefore(a, d))
+     })(document, "script", "gamemonetize-sdk"); 
+
+     function showVideoAd1(call) {
+                console.info("播放视频");
+                if (typeof sdk !== 'undefined' && sdk.showBanner !== 'undefined') {
+                    sdk.showBanner();
+                    call(true);
+                }
+            }
+
+    function showInter1() {
+        console.info("播放插屏");
+        if (typeof sdk !== 'undefined' && sdk.showBanner !== 'undefined') {
+            sdk.showBanner();
+        }
+    }
+     </script>
+</head>
+
+<body>
+    <iframe id="son" class="son" src="a.html" frameborder="0"></iframe>
+<script>
+(function (a, b, c) {
+   var d = a.getElementsByTagName(b)[0];
+   a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "patch/js/gm-sdk-preload.js?v=" + Date.now(), d.parentNode.insertBefore(a, d))
+})(document, "script", "gamemonetize-preload-api");
+</script>
+
+
+</body>
+<script>
+
+
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+        // alert('手机端')
+        document.getElementById('son').style.width = "100%";
+    } else {
+        // alert('PC端')
+        document.getElementById('son').style.width = "30%";
+    }
+
+
+</script>
+
+
+
+</html>

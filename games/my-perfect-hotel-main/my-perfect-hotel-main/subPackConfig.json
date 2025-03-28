@@ -1,0 +1,17 @@
+{
+
+    "1": [{
+            "packName": "res",
+            "zipPath": ""
+        },
+        {
+            "packName": "unity",
+            "zipPath": ""
+        },
+        {
+            "packName": "sound",
+            "zipPath": ""
+        }
+    ]
+
+}

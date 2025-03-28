@@ -1,0 +1,14 @@
+{
+"companyName": "VitalityGames",
+"productName": "Parking Fury 3D",
+"dataUrl": "ParkingFury3D.data.unityweb?v=1",
+"asmCodeUrl": "ParkingFury3D.asm.code.unityweb?v=1",
+"asmMemoryUrl": "ParkingFury3D.asm.memory.unityweb?v=1",
+"asmFrameworkUrl": "ParkingFury3D.asm.framework.unityweb?v=1",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#141414",
+"cacheControl": {"dataUrl": "must-revalidate"}
+}
