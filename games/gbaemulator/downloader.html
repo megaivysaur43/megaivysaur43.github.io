@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulbasaur Chat Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #03e703;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #30a800a6;
+        }
+    </style>
+    <script>
+        function downloadFile(filePath, fileName) {
+            var link = document.createElement('a');
+            link.href = filePath;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</head>
+<body>
+    <h1>Download Both Bios for GBA emulator and Pokemon Evolved Rom for the Emulator! THIS IS REUSABLE</h1>
+    <button class="button" onclick="downloadFile('pokemon-evolved.gba', 'pokemon-evolved.gba')">Rom Download</button>
+    <button class="button" onclick="downloadFile('gba_bios.bin', 'gba_bios.bin')">Bios Download</button>
+    <b href="index.html">Click me after downloaded both files, or if you have done this before.</b> 
+</body>
+</html>

@@ -58,7 +58,7 @@ GameBoyAdvanceCPU.prototype.initializeRegisters = function () {
     this.SPSR[4] = 0xD3; //Undefined
     this.triggeredIRQ = 0;        //Pending IRQ found.
     //Pre-initialize stack pointers if no BIOS loaded:
-    if (!this.IOCore.BIOSFound || this.IOCore.settings.SKIPBoot) {
+    if (this.IOCore.SKIPBoot) {
         this.HLEReset();
     }
     //Start in fully bubbled pipeline mode:
@@ -638,6 +638,17 @@ GameBoyAdvanceCPU.prototype.read16 = function (address) {
         //Rotate word right:
         data = (data << 24) | (data >>> 8);
     }
+    //Updating the address bus back to PC fetch:
+    this.IOCore.wait.NonSequentialBroadcast();
+    return data | 0;
+}
+GameBoyAdvanceCPU.prototype.readSigned16 = function (address) {
+    address = address | 0;
+    //Updating the address bus away from PC fetch:
+    this.IOCore.wait.NonSequentialBroadcast();
+    var data = this.memory.memoryRead16(address | 0) << 16;
+    //Unaligned access gets sign extended:
+	data = data >> ((16 + ((address & 0x1) << 3)) | 0);
     //Updating the address bus back to PC fetch:
     this.IOCore.wait.NonSequentialBroadcast();
     return data | 0;
