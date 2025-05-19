@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "https://helios-browser.w3spaces.com/",
         "https://helios-browser.pages.dev/",
         "https://helios-browser.ct.ws"
-        "https://bulbasaurchat.github.io/games/helios/index.html"
+ 
     ];
 
     function normalizeUrl(url) {
