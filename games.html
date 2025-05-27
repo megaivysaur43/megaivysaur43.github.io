@@ -112,6 +112,8 @@
         </ul>
     </nav>
 
+    <input type="text" id="searchBar" placeholder="Search games..." onkeyup="filterGames()" style="width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px;">
+
     <h1>Proxies</h1>
         <div class="games-container">
         <!-- Game 1 -->
@@ -911,5 +913,21 @@
         <!-- Add more games as needed -->
     </div>
     <a href="index.html" style="color: #f1c40f; margin-top: 20px; display: inline-block;">Back to Home</a>
+    <script>
+function filterGames() {
+    const input = document.getElementById('searchBar').value.toLowerCase();
+    const games = document.querySelectorAll('.game');
+
+    games.forEach(game => {
+        const title = game.querySelector('span').textContent.toLowerCase();
+        if (title.includes(input)) {
+            game.style.display = "";
+        } else {
+            game.style.display = "none";
+        }
+    });
+}
+</script>
+
 </body>
 </html>
