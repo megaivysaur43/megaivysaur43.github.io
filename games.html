@@ -64,6 +64,30 @@
             margin-top: 20px;
         }
 
+        .search-bar {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid #4CAF50; /* Bulbasaur green */
+    border-radius: 8px;
+    background-color: #f4f4f9;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+    .search-bar:focus {
+          outline: none;
+        border-color: #388E3C;
+        background-color: #ffffff;
+    }
+    
+    .search-bar::placeholder {
+        color: #888;
+    }
+
+
         /* Individual Game Styling */
         .game {
             text-align: center;
